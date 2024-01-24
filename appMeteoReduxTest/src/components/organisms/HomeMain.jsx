@@ -17,10 +17,19 @@ const HomeMain = () => {
     
     const resultsWeather = useSelector((state)=>state.weather) // this gets the resultsWeather from the redux store
     const resultsForecast = useSelector((state)=>state.forecast) // this gets the resultsForecast from the redux store
+
+    const latitude = useSelector((state)=>state.cityCoordinates.lat)
+    const longitude = useSelector((state)=>state.cityCoordinates.lon)
+
+
     const dispatch = useDispatch(); //this allows to store new data in the redux store
     
 
     const APIkey = '36c6ba5e6cbbd2a3c701bf362b4629b9'
+
+    const urlCity = `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=40&appid=${APIkey}` //api to get latitude and longitude from the city name
+
+    const urlGlobalWeather = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=${APIkey}` //api to get the weather based on the coordinates
 
     const urlWeather = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${APIkey}&units=metric` //api to populate weather elements
 
@@ -33,11 +42,28 @@ const HomeMain = () => {
 
     //onClick, this function fetches the data based on city query 
     const fetchData = () => {
+        fetchCoordinates()
         fetchDataWeather()
         fetchDataForecast()
         setQuery('')//to empty the search field when the search is done
         }
 
+    
+    const fetchCoordinates = async () => {
+        try {
+            const res = await fetch(urlCity);
+            console.log(urlCity);
+            if (res.ok) {
+                const data = await res.json();
+                dispatch(setResultsWeather(data))    //the fetched data are dispatched and saved in the store            
+            } else {
+                setShowModal(true)
+            }
+        }
+        catch (err) {
+            console.log(err)
+        }
+    };
 
     const fetchDataWeather = async () => {
         try {
