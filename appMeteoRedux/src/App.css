@@ -1,0 +1,104 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* mio css */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-size:2px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: white;
+  background: url('./assets/67fc6fd78962a7ec818b71bb9047-1635220.jpeg') no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0 auto;
+  place-items: center;
+}
+
+p {
+  font-size: 1rem;
+}
+
+h1{
+  font-size: 2rem;
+}
+
+.bold{
+  font-weight: 800;
+}
+
+.semibold{
+  font-weight: 500;
+}
+
+.big{
+  font-size: 3rem;
+}
+
+.cardsBackground{
+  background-color: rgb(19, 19, 103);
+  opacity: 0.7;
+  min-width: 10rem;
+  max-width: 20rem;
+}
+
+.cardsForecast{
+  background-color: rgb(19, 19, 103);
+  opacity: 0.7;
+  width: 20rem;
+}
+
+.blueBackground{
+  background-color: rgb(10, 10, 80);
+}
+
+.rem08{
+  font-size: 0.8rem;
+}
+
+.rem2{
+  font-size: 2rem;
+}
+
+.center{
+  margin: 0 auto !important
+}
+
+.responsiveGraphWrap{
+  width: 100%;
+  height: 300px; /* Altezza predefinita per schermi di dimensioni maggiori */
+  font-size: 0.7rem;
+
+  
+  @media (max-width: 567px) {
+    height: 300px; /* Altezza per schermi più piccoli (max-width:567px) */
+  }
+}
+
+.scrollbar {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.whiteText {
+  color: white;
+}
