@@ -1,10 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { forecastReducer } from "./forecastSlice";
 import { weatherReducer } from "./weatherSlice";
+import { coordinatesReducer } from "./coordinatesSlice";
+import { queryLatLonReducer } from "./queryLatLonSlice";
 
 //this configures the store through the use of redux toolkit, which allows to organize the different parts of the progect in the same file "slice" (see)
 const store =  configureStore ({
     reducer:{
+        coordinates: coordinatesReducer,
+        queryLatLon: queryLatLonReducer,
         weather: weatherReducer, 
         forecast: forecastReducer,
     }

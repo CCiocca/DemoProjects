@@ -13,8 +13,8 @@ export const forecastSlice = createSlice({
         city:{}
     },
     reducers: {
-        setResultsForecast: (state, action) =>{
-            return { ...state, ...action.payload }
+        setResultsForecast: (_, action) =>{         //underscore to actively ignore the state which will not be used in the return
+            return action.payload
         },
     },
 })

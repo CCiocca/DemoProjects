@@ -22,7 +22,6 @@
 }
 
 body{
-  font-size:2px;
   width: 100%;
   height: 100%;
   position: relative;
@@ -50,21 +49,24 @@ h1{
   font-weight: 500;
 }
 
-.big{
-  font-size: 3rem;
-}
-
 .cardsBackground{
-  background-color: rgb(19, 19, 103);
-  opacity: 0.7;
+  background-color: rgb(19, 19, 103, 0.7);
+  /* opacity: 0.7; */
   min-width: 10rem;
   max-width: 20rem;
 }
 
 .cardsForecast{
-  background-color: rgb(19, 19, 103);
-  opacity: 0.7;
+  background-color: rgb(19, 19, 103, 0.7);
+  /* opacity: 0.7;  opacity must be put in rgb in the parent, otherwise the browser won't overwrite it with that of the child, even if the rule is correctly reported in inspector */
   width: 20rem;
+}
+
+.cardsCity{
+  background-color: rgb(19, 19, 103, 0.7);
+  /* opacity: 0.7; */
+  min-width: 20rem;
+  max-width: 40rem;
 }
 
 .blueBackground{
@@ -77,6 +79,10 @@ h1{
 
 .rem2{
   font-size: 2rem;
+}
+
+.rem3{
+  font-size: 3rem;
 }
 
 .center{
@@ -101,4 +107,22 @@ h1{
 
 .whiteText {
   color: white;
+  opacity: 1
+}
+
+.divCity:hover{
+  cursor: pointer;
+}
+
+.weatherIcon{
+  margin: -10px;
+  width: 80px;
+}
+
+.weatherIconBig{
+  margin: -30px;
+  width: 120px;
+}
+.opacity1{
+  opacity: 1;
 }

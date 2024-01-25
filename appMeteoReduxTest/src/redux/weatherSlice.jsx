@@ -22,9 +22,9 @@ export const weatherSlice = createSlice({
     
     },
     reducers: {
-        setResultsWeather: (state, action) =>{
-            return { ...state, ...action.payload };        
-        },
+        setResultsWeather: (_, action) => { //underscore to actively ignore the state which will not be used in the return
+            return action.payload;
+        }
     },
 })
 

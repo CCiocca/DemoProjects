@@ -6,6 +6,8 @@ import WeatherMain from "./WeatherMain";
 import { useState } from "react";
 import ForecastMain from "./ForecastMain";
 import { ErrorMessageQuery } from "../molecules/ErrorMessageQuery";
+import { useNavigate } from "react-router-dom";
+import CurrentWeather from "./CurrentWeather";
 
 
 const HomeMain = () => {
@@ -15,15 +17,18 @@ const HomeMain = () => {
 
     // I substitute the useState with the useSelector which get the values of the states from the store, I use dispatch to update the state values
     
+
+    {/*
     const resultsWeather = useSelector((state)=>state.weather) // this gets the resultsWeather from the redux store
     const resultsForecast = useSelector((state)=>state.forecast) // this gets the resultsForecast from the redux store
-
-    const latitude = useSelector((state)=>state.cityCoordinates.lat)
-    const longitude = useSelector((state)=>state.cityCoordinates.lon)
+*/}
+    const [ResultsCoordinates, setResultsCoordinates] = useSelector((state)=>state.coordinates)
+    const latitude = useSelector((state)=>state.coordinates.lat)
+    const longitude = useSelector((state)=>state.coordinates.lon)
 
 
     const dispatch = useDispatch(); //this allows to store new data in the redux store
-    
+    const navigate = useNavigate()
 
     const APIkey = '36c6ba5e6cbbd2a3c701bf362b4629b9'
 
@@ -31,9 +36,12 @@ const HomeMain = () => {
 
     const urlGlobalWeather = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=${APIkey}` //api to get the weather based on the coordinates
 
+
+    {/*
     const urlWeather = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${APIkey}&units=metric` //api to populate weather elements
 
     const urlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=${APIkey}&units=metric` // api to populate forecast elements
+*/}
 
     //When the user writes in the input, the query value gets updated
     const handleChange = (e) => {
@@ -43,9 +51,10 @@ const HomeMain = () => {
     //onClick, this function fetches the data based on city query 
     const fetchData = () => {
         fetchCoordinates()
-        fetchDataWeather()
-        fetchDataForecast()
+        // fetchDataWeather()
+        // fetchDataForecast()
         setQuery('')//to empty the search field when the search is done
+        navigate(`/geo/1.0/direct/${query}`)  //navigates to choosecity element
         }
 
     
@@ -54,8 +63,10 @@ const HomeMain = () => {
             const res = await fetch(urlCity);
             console.log(urlCity);
             if (res.ok) {
+                console.log(data);
                 const data = await res.json();
-                dispatch(setResultsWeather(data))    //the fetched data are dispatched and saved in the store            
+                dispatch(setResultsCoordinates(data))    //the fetched data are dispatched and saved in the store     
+                console.log(ResultsCoordinates);       
             } else {
                 setShowModal(true)
             }
@@ -65,6 +76,8 @@ const HomeMain = () => {
         }
     };
 
+
+        {/*
     const fetchDataWeather = async () => {
         try {
             const res = await fetch(urlWeather);
@@ -72,8 +85,6 @@ const HomeMain = () => {
             if (res.ok) {
                 const data = await res.json();
                 dispatch(setResultsWeather(data))    //the fetched data are dispatched and saved in the store            
-            } else {
-                setShowModal(true)
             }
         }
         catch (err) {
@@ -96,6 +107,8 @@ const HomeMain = () => {
             console.log(err)
         }
     };
+
+*/}
 
 
     //this allows to dismiss the modal. It also closes when the user clics outside the modal
@@ -140,25 +153,22 @@ const HomeMain = () => {
 
                 
                                         
-        {resultsWeather.name !== "" &&
+        
+        
+       {/* remember to change the condition prendendo il name dalla city coordin */}
+        {/* {resultsWeather.name !== "" && */}
 
         <>
             <Row className="mx-auto mt-3 p-0">
-                <Col className="col-12">
-                <h2 className="bold big">{resultsWeather.name}</h2>
-                </Col>
-
-                <Col className="col-6"> <p className="display-3 semibold">{resultsWeather.main?.temp.toFixed()} °C</p></Col>
-                {/* toFixed aproximates the decimals, in this case the setting is no decimals */}
-
-                <Col className="col-6"> <p className="display-3 semibold">{resultsWeather.weather[0]?.main}</p></Col>
-                {/* this gets inside the resultsWeather, gets the first(and only) element of the  weather array checking if it exists and then it gets to the property main*/}
                 <WeatherMain/>
                 <ForecastMain />   
                                   
             </Row>
         </>
-        }
+        {/* } */}
+
+
+
                     
         </Container>
         </>
