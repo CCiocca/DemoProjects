@@ -6,7 +6,6 @@ import ForecastChart from "./ForecastChart"
 const ForecastMain = () => {
 
     const resultsForecast = useSelector((state)=>state.forecast) //this gets resultsForecast from the redux store
-    console.log(resultsForecast, 'io sono i forecasts da for main')
     
     return(
     <>

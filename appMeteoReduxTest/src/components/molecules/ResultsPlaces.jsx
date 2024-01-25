@@ -51,13 +51,10 @@ const ResultsPlaces = () => {
         const longit = city.lon.toFixed(2)
         const urlForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${latit}&lon=${longit}&appid=${APIkey}&units=metric` // api to populate forecast elements
         try {
-            console.log(urlForecast)
             const res = await fetch(urlForecast);
             if (res.ok) {
                 const data = await res.json();
-                console.log(data);
                 dispatch(setResultsForecast(data));     //the fetched data are dispatched and saved in the store
-                console.log("io sono lo store forecast", resultsForecast)
             }    //the else here is covered by the previous fetchDataWeather which opens an error modal, I don't repeat it here else there will be 2 modals for each wrong input
         }
         catch (err) {

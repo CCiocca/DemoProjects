@@ -49,7 +49,6 @@ const SearchBar = () => {
                     setShowModal(true);
                 } else {
                 dispatch(setResultsCoordinates(data))    //the fetched data are dispatched and saved in the store     
-                console.log(data);
             }
         }}
         catch (err) {
