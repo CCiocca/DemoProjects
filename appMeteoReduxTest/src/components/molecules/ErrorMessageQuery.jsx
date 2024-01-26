@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 export const ErrorMessageQuery = ({ show, handleCloseModal }) => {
   
   return (
-    <Modal show={show} onHide={handleCloseModal}  className='rem08'>
+    <Modal show={show} onHide={handleCloseModal}  className='rem08'> 
       <Modal.Header closeButton className='blueBackground' closeVariant='white'>
         <Modal.Title>City not found</Modal.Title>
       </Modal.Header>

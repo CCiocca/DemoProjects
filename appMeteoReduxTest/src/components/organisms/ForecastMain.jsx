@@ -25,7 +25,7 @@ const ForecastMain = () => {
         {resultsForecast.list.map((forecastByHour) => { ////this allows to process the timestamps given by API into readable date and time format
             
             const date = new Date(forecastByHour.dt*1000);
-            const day = date.getDate().toString().padStart(2, '0');
+            const day = date.getDate().toString().padStart(2, '0'); //stringifies and pads the string with the required number of 0s (at the beginning of the string) to reach the desired number of charcaters 
             const month = date.getMonth().toString() +1; 
             const hour = date.getHours().toString().padStart(2, '0')
             const minutes = date.getMinutes().toString().padStart(2, '0');

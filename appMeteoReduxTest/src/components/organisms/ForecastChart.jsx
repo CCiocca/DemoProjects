@@ -31,7 +31,7 @@ const ForecastChart = () => {
             dataKey="timestamp"
             tickFormatter={(timestamp) => {
                 const date = new Date(timestamp);
-                const formattedDate = date.toLocaleDateString(undefined, { day: 'numeric', month: 'numeric' });
+                const formattedDate = date.toLocaleDateString(undefined, { day: 'numeric', month: 'numeric' }); // to get a date in th DD/mm format
                 return formattedDate;
               }}
               //this allows to process the timestams given by API into readable date and time forma
@@ -40,7 +40,9 @@ const ForecastChart = () => {
         <Tooltip />
 
         <Line type="monotone" dataKey="temp_min" stroke="blue" activeDot={{ r: 8 }} />
-        {/* <Line type="monotone" dataKey="temp_max" stroke="red" activeDot={{ r: 8 }} /> */}
+        {/* <Line type="monotone" dataKey="temp_max" stroke="red" activeDot={{ r: 8 }} /> 
+            //commented beacuse the api gave the same min and max for the X hour
+        */}
       </LineChart>
     </ResponsiveContainer>
   );

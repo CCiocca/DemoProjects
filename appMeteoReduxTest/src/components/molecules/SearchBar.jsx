@@ -1,6 +1,6 @@
 // this component gets the city name from the user and updates the coordinates state with all the city with that name and infos on them 
 import { Button, Col, Form, Row } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { ErrorMessageQuery } from "../molecules/ErrorMessageQuery";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,14 +8,11 @@ import { setResultsCoordinates } from "../../redux/coordinatesSlice";
 
 
 const SearchBar = () => {
-    const [query, setQuery] = useState('')
-
+    const [query, setQuery] = useState('') //useState allows to set a state and update it locally in the component
     const [showModal, setShowModal] = useState(false);    //this modal pops up when the query is not a valid search parameter for the API
-
-    // I substitute the useState with the useSelector which get the values of the states from the store, I use dispatch to update the state values
     
     const dispatch = useDispatch(); //this allows to store new data in the redux store
-    const navigate = useNavigate()
+    const navigate = useNavigate() //to navigate from the component to a /example  page
 
     const APIkey = '36c6ba5e6cbbd2a3c701bf362b4629b9'
 
@@ -45,14 +42,14 @@ const SearchBar = () => {
             if (res.ok) {
                 const data = await res.json();
 
-                if(data.length == 0) {              //if the city is unexisting, hence the returned array is empty, an error modal appears, otherwise the data are dispatched. I put the modal before the dispatch to save an action that would be useless 
-                    setShowModal(true);
+                if(data.length == 0) {      //if the city is unexisting, hence the returned array is empty, an error modal appears, otherwise the data are dispatched. I put the modal before the dispatch to save an action that would be useless 
+                    setShowModal(true);     //this 
                 } else {
                 dispatch(setResultsCoordinates(data))    //the fetched data are dispatched and saved in the store     
             }
         }}
         catch (err) {
-            console.log(err)    
+            console.log(err)    // if the API fetch fails, an error is returned in console
         }
     };
 

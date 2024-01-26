@@ -5,7 +5,6 @@ import { Col, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { setResultsQueryLatLon } from '../../redux/queryLatLonSlice'
-import { useState, useEffect } from 'react'
 import { setResultsWeather } from '../../redux/weatherSlice'
 import { setResultsForecast } from '../../redux/forecastSlice'
 
@@ -17,9 +16,9 @@ const ResultsPlaces = () => {
 
 
     const dispatch = useDispatch(); //this allows to store new data in the redux store
-    const navigate = useNavigate()
+    const navigate = useNavigate(); //this allows to navigate through the pages 
 
-    const APIkey = '36c6ba5e6cbbd2a3c701bf362b4629b9'
+    const APIkey = '36c6ba5e6cbbd2a3c701bf362b4629b9'  //to access the api
 
     
     //onClick, this function fetches the data based on city query 
@@ -30,6 +29,7 @@ const ResultsPlaces = () => {
         navigate(`/data/2.5/weather/${city.name}`)  //navigates to choosecity element
     }
     
+    //this fetch takes the city obj and gets the parameters needed to proceed with the API call
     const fetchDataWeather = async (city) => {
         const latit = city.lat.toFixed(2)   //the url requires 2 decimal numbers, not more, so this number has to be fixed 
         const longit = city.lon.toFixed(2)
@@ -46,6 +46,7 @@ const ResultsPlaces = () => {
         }
     };   
     
+    //same as above, different URL
     const fetchDataForecast = async (city) => {
         const latit = city.lat.toFixed(2)   
         const longit = city.lon.toFixed(2)
@@ -66,6 +67,7 @@ const ResultsPlaces = () => {
         <Row className='d-flex flex-column'>
             <h5>Select a city</h5>
 
+        {/* the cities, with relative coordinates, are now stored in "resultsCoord" and are mapped in the page so the user can select the desired one */}
         {resultsCoordinates.map((city, index)=> (
             
                 <div key={index} className="rounded cardsCity p-4 my-2 g-1 text-start divCity mx-auto" onClick={()=> fetchData(city) }>
