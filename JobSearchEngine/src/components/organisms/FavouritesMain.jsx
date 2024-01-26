@@ -2,9 +2,9 @@
 import { Button, Col, Container, ListGroup, ListGroupItem, Row } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
-import { REMOVE_FAVOURITE } from "../actions/favouritesAction";
+import { REMOVE_FAVOURITE } from "../../actions/favouritesAction";
 import { useState } from "react";
-import { ConfirmDeleteAlert } from "./ConfirmDeleteAlert"
+import { ConfirmDeleteAlert } from "../molecules/ConfirmDeleteAlert"
 
 const FavouritesMain = () => {
     const favouritesData = useSelector((state) => state.favourites);
@@ -40,6 +40,8 @@ const FavouritesMain = () => {
             >
                 <Col xs={10} className="mx-auto my-3">
                 <h1 className="display-4">Favourite Companies</h1>
+                </Col>
+                <Col xs={10} className="mx-auto my-3 d-flex justify-content-end">
                 <Button variant="outline-primary" onClick={()=> navigate('/')}>Home</Button>
                 </Col>
                 <Col xs={10} className="mx-auto mb-5 mt-3">
@@ -49,7 +51,7 @@ const FavouritesMain = () => {
                              
                         <ListGroup.Item key={index} className="d-flex justify-content-between">
                             <Link to={`/${favourite.company_name}`}>{favourite.company_name}</Link>
-                            <Button variant="outline-danger" onClick={()=> handleClick(favourite)}>Remove</Button>
+                            <Button variant="outline-danger" onClick={()=> handleClick(favourite)}><i className="fa-regular fa-trash-can"></i></Button>
                             <ConfirmDeleteAlert 
                                 show={showDeleteModal}
                                 handleCloseModal={handleCloseModal}
@@ -57,7 +59,7 @@ const FavouritesMain = () => {
                                 companyName={companyToRemove.company_name}/>
                         </ListGroup.Item>
                     )) : (
-                    <ListGroup.Item>There are no favourites</ListGroup.Item>
+                    <ListGroup.Item className="border-0">There are no favourites</ListGroup.Item>
                     ) 
                     }
                 </ListGroup>

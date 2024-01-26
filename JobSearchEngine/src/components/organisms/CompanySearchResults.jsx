@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import Job from "./Job";
+import Job from "../molecules/Job";
 import { useNavigate, useParams } from "react-router-dom";
 
 
@@ -14,7 +14,6 @@ const CompanySearchResults = () => {
 
   useEffect(() => {
     getJobs();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getJobs = async () => {
@@ -37,7 +36,7 @@ const CompanySearchResults = () => {
         <Col xs={10} className="mx-auto my-3">
           <h1 className="display-4">Job posting for: {params.company}</h1>
         </Col>
-        <Col xs={10} className="mx-auto my-3">
+        <Col xs={10} className="mx-auto my-3 d-flex justify-content-end">
           <Button className="me-2" variant="outline-primary" onClick={()=> navigate('/favourites')}>See favourites</Button>
           <Button variant="outline-primary" onClick={()=> navigate('/')}>Home</Button>
         </Col>

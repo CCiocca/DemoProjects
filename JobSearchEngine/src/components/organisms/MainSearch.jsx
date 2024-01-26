@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import Job from "./Job";
+import Job from "../molecules/Job";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addJobsList } from "../actions/favouritesAction";
+import { addJobsList } from "../../actions/favouritesAction";
 
 
 const MainSearch = () => {
@@ -39,11 +39,12 @@ const MainSearch = () => {
 
   return (
     <Container>
+
       <Row>
         <Col xs={10} className="mx-auto my-3">
           <h1 className="display-1">Remote Jobs Search</h1>
         </Col>
-        <Col xs={10} className="mx-auto my-3">
+        <Col xs={10} className="mx-auto my-3 d-flex justify-content-end">
           <Button variant="outline-primary" onClick={()=> navigate('/favourites')}>See favourites</Button>
         </Col>
         
