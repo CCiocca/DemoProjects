@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Job from "../molecules/Job";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addJobsList } from "../../actions/favouritesAction";
 

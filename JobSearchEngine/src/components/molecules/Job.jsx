@@ -1,8 +1,5 @@
-import { Row, Col, Button } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux'
+import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { addFavourite } from '../../actions/favouritesAction.jsx'
-import { useState } from 'react'
 import FavHeartClick from './FavHeartClick.jsx'
 
 

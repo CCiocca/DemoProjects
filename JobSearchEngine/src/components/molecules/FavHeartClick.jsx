@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addFavourite, removeFavourite } from "../../actions/favouritesAction";
 import { AddedAlert } from "./AddedAlert";
@@ -38,7 +38,7 @@ const FavHeartClick = ({ jobId, companyName, jobData }) => {
   const handleCloseModal = () => {
   setShowModal(false)
   }
-  
+
 
   return (
     <>
