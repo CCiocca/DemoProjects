@@ -32,7 +32,7 @@ a {
   text-decoration: none; 
 }
 
-.navbarColor{
+.navbarColor, .dropdown-menu{
   background: #ee9049;
 }
 
