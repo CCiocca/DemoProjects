@@ -12,7 +12,6 @@ const FavHeartClick = ({ jobId, companyName, jobData }) => {
   const isInFavourites = favouritesData.some((favourite) => favourite.company_name === companyName); //this searches if the company is already in the favouritesData (from the store), returns a boolean T/F
 
 
-
   //when the user clicks on the heart, if the boolean is true, the company is removed, else the company is added to favourites
   const handleHeartClick = ({jobData}) => {
     const isCompanyInFavourites = favouritesData.some((favourite) => favourite.company_name === companyName); //this searches if the company is already in the favouritesData (from the store), returns a boolean T/F
@@ -22,22 +21,24 @@ const FavHeartClick = ({ jobId, companyName, jobData }) => {
 
 
     if (isCompanyInFavourites) {
-      dispatch(removeFavourite(jobData));
-      heart.classList.remove('fa-solid');
+      dispatch(removeFavourite(jobData));  //this updates the store data, removing the selected company
       heart.classList.add('fa-regular');
+      heart.classList.remove('fa-solid');  //this updates the heart color, firt removing the opposite class and then adding the right one
     } else {
-        dispatch(addFavourite(jobData));
+        dispatch(addFavourite(jobData));  //this updates the store data, adding the selected company
         heart.classList.remove('fa-regular');
         heart.classList.add('fa-solid');
 
-      setShowModal(true);
+        setShowModal(true); //when we add the company, a modal appears to signal it (it was an exercice, in UX the filled heart is sufficient to signal that the company was added)
     }
   };
 
-    //this allows to dismiss the modal. It also closes when the user clics outside the modal
-    const handleCloseModal = () => {
-    setShowModal(false)
-    }
+
+  //this allows to dismiss the modal. It also closes when the user clics outside the modal
+  const handleCloseModal = () => {
+  setShowModal(false)
+  }
+  
 
   return (
     <>

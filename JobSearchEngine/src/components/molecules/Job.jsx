@@ -9,29 +9,6 @@ import FavHeartClick from './FavHeartClick.jsx'
 
 const Job = ({ jobData }) => {
 
-  const favouritesData = useSelector((state) => state.favourites);
-  const dispatch = useDispatch()
-
-  const [showModal, setShowModal] = useState(false);
-
-  const handleClick = (jobData) => {
-
-      // I check that the company is not already among the favs
-    const isCompanyInFavourites = favouritesData.some((favourite) => favourite.company_name === jobData.company_name )
-  
-     // If the company is not yet in the favourites, it is added, else it is not. I left the modal tue so that the user knows that the company is in its favourites anyways
-    if(!isCompanyInFavourites) {
-      dispatch(addFavourite(jobData));
-      }
-    setShowModal(true);
-  }
-
-    //this allows to dismiss the modal. It also closes when the user clics outside the modal
-  const handleCloseModal = () => {
-    setShowModal(false)
-  }
-  
-
   // This if verifies that jobData is defined
   if (!jobData) {
     return "No job ad available"; 
@@ -54,16 +31,6 @@ const Job = ({ jobData }) => {
         {jobData.title}
       </a>
     </Col>
-    {/* <Col xs={3}>
-      <Button variant="outline-success"  onClick={() => handleClick(jobData)}>Add to favourites
-      </Button>
-    </Col> */}
-
-    {/* this modal is used to confirm that company was added */}
-    {/* <AddedAlert 
-      show={showModal}
-      handleCloseModal={handleCloseModal}
-      companyName={jobData.company_name}/> */}
   </Row>
 
   </>
