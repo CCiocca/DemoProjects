@@ -34,8 +34,8 @@ const CustomFooter = () => {
         </Col> 
     </Row>
 
-    <Row className="gx-4 py-2 mx-auto">
-        <Col className="col-3">
+    <Row className="gx-4 py-2 mx-auto d-flex flex-sm-row flex-column ">
+        <Col >
             <ul className="list-unstyled small lh-lg">
                 <li>Main Companies</li>
                 <li>Media Center</li>
@@ -44,7 +44,7 @@ const CustomFooter = () => {
             </ul>
         </Col>
 
-        <Col className="col-3">
+        <Col >
             <ul className="list-unstyled small lh-lg">
                 <li>Sponsored Ads</li>
                 <li>Investor Relations</li>
@@ -52,7 +52,7 @@ const CustomFooter = () => {
             </ul>
         </Col>
     
-        <Col className="col-3">
+        <Col >
             <ul className="list-unstyled small lh-lg">
                 <li>Help Center</li>
                 <li>Jobs</li>
@@ -60,7 +60,7 @@ const CustomFooter = () => {
             </ul>
         </Col>
 
-        <Col className="col-3">
+        <Col >
             <ul className="list-unstyled small lh-lg">
                 <li>Gift Cards</li>
                 <li>Terms of Use</li>
