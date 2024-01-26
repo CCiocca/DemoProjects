@@ -56,7 +56,7 @@ const FavouritesMain = () => {
                                 companyName={companyToRemove.company_name}/>
                         </ListGroup.Item>
                     )) : (
-                    <ListGroup.Item className="border-0">There are no favourites</ListGroup.Item>
+                    <ListGroup.Item className="border-0 no-fav">There are no favourites</ListGroup.Item>
                     ) 
                     }
                 </ListGroup>

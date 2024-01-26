@@ -16,15 +16,10 @@
 /* --------------------------------
 my code */
 
-body{
+body, .no-fav{
   color: black;
   /* background-color: #f8e8b0; */
   background: #f8e8b0 ;
-}
-
-
-h1, h2, h3, h4, h5, h6{
-  
 }
 
 .jobAd, .favouritesAd {
@@ -62,9 +57,6 @@ a.page-link{
   color: #f8e8b0;
   background-color: #ee9049; 
 }
-
-
-
 
 
 .logo{
