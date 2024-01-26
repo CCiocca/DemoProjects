@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,19 +13,78 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* --------------------------------
+my code */
+
+body{
+  color: black;
+  /* background-color: #f8e8b0; */
+  background: #f8e8b0 ;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+h1, h2, h3, h4, h5, h6{
+  
 }
+
+.jobAd, .favouritesAd {
+  background-color: #303C6C;
+  color: #B4DFE5;
+}
+
+a {
+  color: #B4DFE5;
+  text-decoration: none; 
+}
+
+.navbarColor{
+  background: #ee9049;
+}
+
+a.page-link{
+  background-color: #fbe07d;
+  border-color: #f4be6c;
+  color: #303C6C;
+}
+
+.page-item.active .page-link{
+  background-color: #303C6C;
+  border-color: #303C6C;
+}
+
+/* to overwrite the bootstrap variants */
+.btn.btn-outline-primary { 
+  color: #eb6701; 
+  border-color: #eb6701; 
+  background-color: #f8e8b0;
+}
+.btn.btn-outline-primary:hover{
+  color: #f8e8b0;
+  background-color: #ee9049; 
+}
+
+
+
+
 
 .logo{
   font-family: 'Lobster', sans-serif;
 }
+
+
+/* 
+combo blu-verde
+#05386B
+#379683
+#5CDB95
+#8EE4AF
+#EDF5E1
+
+
+giallo-arancio-blu
+#FBE8A6
+#F4976C
+#303C6C
+#B4DFE5
+#D2FDFF
+ */

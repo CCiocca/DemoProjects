@@ -34,12 +34,9 @@ const FavouritesMain = () => {
 
     return(
         <Container>
-            <Row
-            className="mx-0 mt-3 p-3 d-flex flex-column"
-            style={{ border: '1px solid #00000033', borderRadius: 4 }}
-            >
+            <Row className="mx-0 mt-3 p-3 d-flex flex-column">
                 <Col xs={10} className="mx-auto my-3">
-                <h1 className="display-4">Favourite Companies</h1>
+                <h1 className="display-5">Favourite Companies</h1>
                 </Col>
                 <Col xs={10} className="mx-auto my-3 d-flex justify-content-end">
                 <Button variant="outline-primary" onClick={()=> navigate('/')}>Home</Button>
@@ -49,7 +46,7 @@ const FavouritesMain = () => {
                     { favouritesData?.length > 0 ? (
                         favouritesData.map((favourite, index) => 
                              
-                        <ListGroup.Item key={index} className="d-flex justify-content-between">
+                        <ListGroup.Item key={index} className="d-flex justify-content-between favouritesAd border-0">
                             <Link to={`/${favourite.company_name}`}>{favourite.company_name}</Link>
                             <Button variant="outline-danger" onClick={()=> handleClick(favourite)}><i className="fa-regular fa-trash-can"></i></Button>
                             <ConfirmDeleteAlert 

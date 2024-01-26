@@ -8,8 +8,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const JobNavbar = () => {
     return(
-    <Navbar expand="lg" className="bg-body-tertiary p-3 mx-3">
-      <Container fluid>
+    <Navbar expand="lg" className="bg-body-tertiary m-0 p-0 sticky-top">
+      <Container fluid className='navbarColor p-3 px-5 navbarColor'>
         <Navbar.Brand href="/" className='logo fs-2'>FindYourJob</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -33,7 +33,7 @@ const JobNavbar = () => {
 
           </Nav>
           <Form className="d-flex">
-            <Button variant="outline-success">Log in</Button>
+            <Button variant="outline-dark">Log in</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
