@@ -7,10 +7,12 @@ import JobNavbar from "../components/organisms/JobNavbar"
 const FavouritesPage = () => {
     return(
         <>
+        <div className="all">
         <JobNavbar/>
         <FavouritesMain/>
         <CustomPagination/>
         <CustomFooter/>
+        </div>
         </>
     )
 }

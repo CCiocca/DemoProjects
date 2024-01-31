@@ -7,10 +7,14 @@ import MainSearch from "../components/organisms/MainSearch"
 const HomePage = () => {
     return(
         <>
-        <JobNavbar/>
-        <MainSearch/>
-        <CustomPagination/>
-        <CustomFooter/>
+        <div className="all">
+            <JobNavbar/>
+                <div className="main">
+                    <MainSearch/>
+                    <CustomPagination/>
+                </div>
+                <CustomFooter/>
+        </div>
         </>
     )
 }

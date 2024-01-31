@@ -9,24 +9,24 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 const JobNavbar = () => {
     return(
     <Navbar expand="lg" className="bg-body-tertiary m-0 p-0 sticky-top">
-      <Container fluid className='navbarColor p-3 px-5 navbarColor'>
-        <Navbar.Brand href="/" className='logo fs-2'>FindYourJob</Navbar.Brand>
+      <Container fluid className='p-3 px-5 navbarColor'>
+        <Navbar.Brand href="/" className='logo fs-2 navbarText'>FindYourJob</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="me-auto my-2 my-lg-0"
+            className="me-auto my-2 my-lg-0 "
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/favourites">Favourites</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="/unexisting/page/test">An unexisting page</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
+            <Nav.Link href="/" className='navbarText'>Home</Nav.Link>
+            <Nav.Link href="/favourites" className='navbarText'>Favourites</Nav.Link>
+            <NavDropdown title="Link" id="navbarScrollingDropdown" style={{ color: '#fbe07d' }}>
+              <NavDropdown.Item href="/unexisting/page/test" className='navbarText'>An unexisting page</NavDropdown.Item>
+              <NavDropdown.Item href="#action4" className='navbarText'>
                 Another action
               </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
+              <NavDropdown.Divider className='navbarText'/>
+              <NavDropdown.Item href="#action5" className='navbarText'>
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>

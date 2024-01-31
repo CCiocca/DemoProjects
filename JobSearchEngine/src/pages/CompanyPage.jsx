@@ -7,10 +7,14 @@ import JobNavbar from "../components/organisms/JobNavbar"
 const CompanyPage = () => {
     return(
         <>
+        <div className="all">
         <JobNavbar/>
+            <div className="main">
         <CompanySearchResults/>
         <CustomPagination/>
+            </div>
         <CustomFooter/>
+        </div>
         </>
     )
 }

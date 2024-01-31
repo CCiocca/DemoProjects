@@ -6,9 +6,11 @@ import NotFound from "../components/organisms/NotFound"
 const ErrorPage = () => {
     return(
         <>
+        <div className="all">
         <JobNavbar/>
         <NotFound/>
         <CustomFooter/>
+        </div>
         </>
     )
 }

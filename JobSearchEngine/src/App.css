@@ -16,11 +16,23 @@
 /* --------------------------------
 my code */
 
+.all{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to bottom , #59cedd, #1a7678);  
+  color: #303C6C;
+}
+
+.main{
+  flex: 1;
+}
+
+
 body, .no-fav{
   color: black;
-  /* background-color: #f8e8b0; */
-  background: #f8e8b0 ;
-}
+ }
+
 
 .jobAd, .favouritesAd {
   background-color: #303C6C;
@@ -33,12 +45,19 @@ a {
 }
 
 .navbarColor, .dropdown-menu{
-  background: #ee9049;
+  background: #303C6C;
+}
+
+.navbarText{
+  color: #fbe07d !important
+}
+.navbarText:hover{
+  color: #B4DFE5;
 }
 
 a.page-link{
-  background-color: #fbe07d;
-  border-color: #f4be6c;
+  background-color: #f8e8b0;
+  border-color: #f2c581;
   color: #303C6C;
 }
 
@@ -47,15 +66,24 @@ a.page-link{
   border-color: #303C6C;
 }
 
+.blueText{
+  color: #303C6C;
+}
+
+.blueBorder {
+  border: 1px solid #303C6C;
+  border-radius: 5px;
+}
+
 /* to overwrite the bootstrap variants */
 .btn.btn-outline-primary { 
-  color: #eb6701; 
-  border-color: #eb6701; 
+  color: #303C6C; 
+  border-color: #303C6C; 
   background-color: #f8e8b0;
 }
 .btn.btn-outline-primary:hover{
   color: #f8e8b0;
-  background-color: #ee9049; 
+  background-color: #303C6C; 
 }
 
 
@@ -74,9 +102,9 @@ combo blu-verde
 
 
 giallo-arancio-blu
-#FBE8A6
-#F4976C
-#303C6C
-#B4DFE5
-#D2FDFF
+#FBE8A6 giallino
+#F4976C arancio
+#303C6C blu
+#B4DFE5 azzurro
+#D2FDFF azzurro chiaro
  */
