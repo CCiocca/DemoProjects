@@ -11,7 +11,7 @@ const JobNavbar = () => {
     <Navbar expand="lg" className="bg-body-tertiary m-0 p-0 sticky-top">
       <Container fluid className='p-3 px-5 navbarColor'>
         <Navbar.Brand href="/" className='logo fs-2 navbarText'>FindYourJob</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Toggle aria-controls="navbarScroll" className='fa-solid fa-bars'/>
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0 "
@@ -20,7 +20,7 @@ const JobNavbar = () => {
           >
             <Nav.Link href="/" className='navbarText'>Home</Nav.Link>
             <Nav.Link href="/favourites" className='navbarText'>Favourites</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown" style={{ color: '#fbe07d' }}>
+            <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/unexisting/page/test" className='navbarText'>An unexisting page</NavDropdown.Item>
               <NavDropdown.Item href="#action4" className='navbarText'>
                 Another action
@@ -33,7 +33,7 @@ const JobNavbar = () => {
 
           </Nav>
           <Form className="d-flex">
-            <Button variant="outline-dark">Log in</Button>
+            <Button variant="outline-dark" className='logButton'>Log in</Button>
           </Form>
         </Navbar.Collapse>
       </Container>

@@ -44,17 +44,33 @@ a {
   text-decoration: none; 
 }
 
+/* navbar */
 .navbarColor, .dropdown-menu{
   background: #303C6C;
 }
 
-.navbarText{
-  color: #fbe07d !important
-}
-.navbarText:hover{
-  color: #B4DFE5;
+.navbarText, .nav-link{
+  color: #fbe07d 
 }
 
+.navbarText:hover, .nav-link:hover{
+  color: #B4DFE5;
+  background-color: #303C6C;
+}
+
+.navbar-toggler{
+  border: 1px solid #fbe07d
+}
+
+.navbar-toggler-icon {
+  width: 0;
+  height: 0;
+}
+.fa-bars{
+  color: #fbe07d;
+}
+
+/* pagination */
 a.page-link{
   background-color: #f8e8b0;
   border-color: #f2c581;
@@ -86,6 +102,11 @@ a.page-link{
   background-color: #303C6C; 
 }
 
+.btn.btn-outline-dark {
+  color: #f8e8b0;
+  border-color: #fbe07d; 
+  background-color: #303C6C; 
+}
 
 .logo{
   font-family: 'Lobster', sans-serif;
