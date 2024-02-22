@@ -1,0 +1,16 @@
+.imgZoom, .movie-cover {
+    transition: transform .2s;
+    /* width: 130px;
+    height: 180px; */
+    margin: 0 auto;
+  }
+  
+.imgZoom:hover {
+    cursor: pointer;
+    transform: scale(1.5); 
+  }
+
+.movie-cover:hover {
+    cursor: pointer;
+    transform: scale(1.5); 
+  }
