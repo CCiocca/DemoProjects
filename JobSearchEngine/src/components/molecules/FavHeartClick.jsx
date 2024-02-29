@@ -9,10 +9,10 @@ const FavHeartClick = ({ jobId, companyName, jobData }) => {
 
   const [showModal, setShowModal] = useState(false);
 
-  const isInFavourites = favouritesData.some((favourite) => favourite.company_name === companyName); //this searches if the company is already in the favouritesData (from the store), returns a boolean T/F
+  const isInFavourites = favouritesData.some((favourite) => favourite.company_name === companyName); //this searches if the company is already in the favouritesData (from the store), returns a boolean T/F. Contrary to isCompanyInFavourites, this allows to keep the correct heart state when the component is reloaded due to navigation or else
 
-
-  //when the user clicks on the heart, if the boolean is true, the company is removed, else the company is added to favourites
+  // isCompanyInFavourites instead works on adding/removing the like when the heart button is clicked
+  //when the user clicks on the heart, if the isInFavourites boolean is true, the company is removed, else the company is added to favourites
   const handleHeartClick = ({jobData}) => {
     const isCompanyInFavourites = favouritesData.some((favourite) => favourite.company_name === companyName); //this searches if the company is already in the favouritesData (from the store), returns a boolean T/F
     
