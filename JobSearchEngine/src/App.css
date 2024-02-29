@@ -29,7 +29,7 @@ my code */
 }
 
 
-body, .no-fav{
+body{
   color: black;
  }
 
@@ -82,6 +82,13 @@ a.page-link{
   border-color: #303C6C;
 }
 
+.no-fav {
+  color: #303C6C;
+  border: none;
+  background-color: transparent;
+  font-size: 1.4rem;
+}
+
 .blueText{
   color: #303C6C;
 }
@@ -108,7 +115,7 @@ a.page-link{
   background-color: #303C6C; 
 }
 
-.logo{
+.logo, .pg-title{
   font-family: 'Lobster', sans-serif;
 }
 

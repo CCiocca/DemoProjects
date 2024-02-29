@@ -34,7 +34,7 @@ const CompanySearchResults = () => {
     <Container>
       <Row className="mx-0 mt-3 p-3">
         <Col xs={10} className="mx-auto my-3">
-          <h1 className="display-5">Job posting for: {params.company}</h1>
+          <h1 className="display-5 pg-title">Job posting for: {params.company}</h1>
         </Col>
         <Col xs={10} className="mx-auto my-3 d-flex justify-content-end">
           <Button className="me-2" variant="outline-primary" onClick={()=> navigate('/favourites')}>See favourites</Button>

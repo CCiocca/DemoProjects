@@ -42,7 +42,7 @@ const MainSearch = () => {
 
       <Row>
         <Col xs={10} className="mx-auto my-3">
-          <h1 className="display-1">Remote Jobs Search</h1>
+          <h1 className="display-1 pg-title">Remote Jobs Search</h1>
         </Col>
         <Col xs={10} className="mx-auto my-3 d-flex justify-content-end">
           <Button variant="outline-primary" onClick={()=> navigate('/favourites')}>See favourites</Button>

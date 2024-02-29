@@ -36,7 +36,7 @@ const FavouritesMain = () => {
         <Container>
             <Row className="mx-0 mt-3 p-3 d-flex flex-column">
                 <Col xs={10} className="mx-auto my-3">
-                <h1 className="display-5">Favourite Companies</h1>
+                <h1 className="display-5 pg-title">Favourite Companies</h1>
                 </Col>
                 <Col xs={10} className="mx-auto my-3 d-flex justify-content-end">
                 <Button variant="outline-primary" onClick={()=> navigate('/')}>Home</Button>

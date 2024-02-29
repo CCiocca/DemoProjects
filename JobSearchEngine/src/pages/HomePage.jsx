@@ -11,7 +11,7 @@ const HomePage = () => {
             <JobNavbar/>
                 <div className="main">
                     <MainSearch/>
-                    <CustomPagination/>
+                    {/* <CustomPagination/> */}
                 </div>
                 <CustomFooter/>
         </div>

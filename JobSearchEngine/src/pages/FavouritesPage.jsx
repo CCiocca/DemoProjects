@@ -10,7 +10,7 @@ const FavouritesPage = () => {
         <div className="all">
         <JobNavbar/>
         <FavouritesMain/>
-        <CustomPagination/>
+        {/* <CustomPagination/> */}
         <CustomFooter/>
         </div>
         </>
