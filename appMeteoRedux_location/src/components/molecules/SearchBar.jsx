@@ -43,7 +43,7 @@ const SearchBar = () => {
                 const data = await res.json();
 
                 if(data.length == 0) {      //if the city is unexisting, hence the returned array is empty, an error modal appears, otherwise the data are dispatched. I put the modal before the dispatch to save an action that would be useless 
-                    setShowModal(true);     //this 
+                    setShowModal(true);    
                 } else {
                 dispatch(setResultsCoordinates(data))    //the fetched data are dispatched and saved in the store     
             }
@@ -72,7 +72,7 @@ const SearchBar = () => {
                 <Col className="mx-auto mb-4 d-flex justify-content-around col-md-8">
                 <Form className="mx-auto d-flex"
                     onSubmit={(e) => {
-                        e.preventDefault(); // to avoid form submit when user clicks enter key
+                        e.preventDefault(); // to avoid form submit and page reload (when user clicks enter key)
                         fetchData(); // to fetchData when user clicks Enter key
                       }}>
                     <Form.Control
