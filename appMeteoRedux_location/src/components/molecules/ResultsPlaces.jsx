@@ -26,7 +26,7 @@ const ResultsPlaces = () => {
         dispatch((setResultsQueryLatLon(city)));     // this dispatch  is not mandatory since I use the saved parameters in this page, where i also get them. I chose to dispatch in case of future app development, in the eventuality of using them in another component which requires an API call
         fetchDataWeather(city)
         fetchDataForecast(city)
-        navigate(`/data/2.5/weather/${city.name}`)  //navigates to choose city element
+        navigate(`/data/2.5/weather/${city.name}`)  //navigates to choosen city element
     }
     
     //this fetch takes the city obj and gets the parameters needed to proceed with the API call
