@@ -70,24 +70,24 @@ const SearchBar = () => {
                 </Col>
             
                 <Col className="mx-auto mb-4 d-flex justify-content-around col-md-8">
-                <Form className="mx-auto d-flex"
-                    onSubmit={(e) => {
-                        e.preventDefault(); // to avoid form submit and page reload (when user clicks enter key)
-                        fetchData(); // to fetchData when user clicks Enter key
-                      }}>
-                    <Form.Control
-                                type="text"
-                                placeholder="Search a city"
-                                className="mx-2"
-                               
-                                value={query} 
-                                onChange={handleChange}
-                                />
+                    <Form className="mx-auto d-flex"
+                        onSubmit={(e) => {
+                            e.preventDefault(); // to avoid form submit and page reload (when user clicks enter key)
+                            fetchData(); // to fetchData when user clicks Enter key
+                        }}>
+                        <Form.Control
+                                    type="text"
+                                    placeholder="Search a city"
+                                    className="mx-2"
+                                
+                                    value={query} 
+                                    onChange={handleChange}
+                                    />
 
-                    <Button type="button" variant="outline-light" onClick={() => fetchData()}>Search</Button> 
-                    {/* this button calls the function fetchData at onClick */}
-                </Form>
-                    </Col>
+                        <Button type="button" variant="outline-light" onClick={() => fetchData()}>Search</Button> 
+                        {/* this button calls the function fetchData at onClick */}
+                    </Form>
+                </Col>
             </Row>
             <ErrorMessageQuery
                   show={showModal}
