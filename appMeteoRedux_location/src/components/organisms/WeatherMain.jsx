@@ -8,24 +8,24 @@ const WeatherMain = () => {
     return(
         <>
         <Row>  
-        <Col className="col-12">
-        <h2 className="bold rem3">{resultsWeather.name}</h2>
-        </Col>
+            <Col className="col-12">
+              <h2 className="bold rem3">{resultsWeather.name}</h2>
+            </Col>
         </Row> 
 
         <Row >
-        <Col className="col-md-2 offset-md-4"> 
-        {/* to center the 2 colums in this row, giving them space on external margins */}
-        <p className="rem3 semibold">{resultsWeather.main?.temp.toFixed()} °C</p>
-        </Col>
-        {/* toFixed aproximates the decimals, in this case the setting is no decimals */}
+            <Col className="col-md-2 offset-md-4"> 
+            {/* to center the 2 colums in this row, giving them space on external margins */}
+                <p className="rem3 semibold">{resultsWeather.main?.temp.toFixed()} °C</p>
+            </Col>
+            {/* toFixed aproximates the decimals, in this case the setting is no decimals */}
 
-        <Col className="col-md-2"> 
-        {/*pt.2 of: to center the 2 colums in this row, giving them space on external margins */}
-        <img src={`https://openweathermap.org/img/wn/${resultsWeather.weather[0].icon}@2x.png`} alt={resultsWeather.weather[0].description} className="weatherIconBig"/>
-        <p className="rem1 semibold">{resultsWeather.weather[0]?.main}</p>
-        </Col>
-        {/* this gets inside the resultsWeather, gets the first(and only) element of the  weather array checking if it exists and then it gets to the property main */}  
+            <Col className="col-md-2"> 
+            {/*pt.2 of: to center the 2 colums in this row, giving them space on external margins */}
+                <img src={`https://openweathermap.org/img/wn/${resultsWeather.weather[0].icon}@2x.png`} alt={resultsWeather.weather[0].description} className="weatherIconBig"/>
+                <p className="rem1 semibold">{resultsWeather.weather[0]?.main}</p>
+            </Col>
+            {/* this gets inside the resultsWeather, gets the first(and only) element of the  weather array checking if it exists and then it gets to the property main */}  
         </Row>
 
         
