@@ -28,7 +28,6 @@ const WeatherMain = () => {
             {/* this gets inside the resultsWeather, gets the first(and only) element of the  weather array checking if it exists and then it gets to the property main */}  
         </Row>
 
-        
         <h5 className="mt-2">Today</h5>
         <Col className="d-flex flex-wrap justify-content-between p-0 gap-1">
                     
